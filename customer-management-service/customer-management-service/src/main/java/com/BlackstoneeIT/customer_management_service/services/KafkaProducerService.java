@@ -4,6 +4,7 @@ import com.BlackstoneeIT.customer_management_service.dto.AccountCreationEvent;
 import com.BlackstoneeIT.customer_management_service.enums.CustomerType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,9 @@ public class KafkaProducerService {
 
         log.info("Publishing account creation event: {}", event);
         return kafkaTemplate.send(ACCOUNT_CREATION_TOPIC, event.getRequestId(), event);
+    }
+    @KafkaListener(topics = "account-creation-responses", groupId = "debug-group")
+    public void debugRaw(String message) {
+        log.info("DEBUG RAW message: {}", message);
     }
 }
