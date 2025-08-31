@@ -57,8 +57,8 @@ public class AccountStatusService {
     private AccountStatusDto convertToStatusDto(AccountCreationResponse response) {
         return new AccountStatusDto(
                 response.getRequestId(),
-                response.getAccountId()!= null ? response.getAccountId().toString() : null,
-                response.getCustomerId() != null ? response.getCustomerId().toString() : null,
+                response.getAccountId()!= null ? response.getAccountId() : null,
+                response.getCustomerId() != null ? response.getCustomerId() : null,
                 response.getStatus(),
                 response.getMessage(),
                 response.getErrorCode(),

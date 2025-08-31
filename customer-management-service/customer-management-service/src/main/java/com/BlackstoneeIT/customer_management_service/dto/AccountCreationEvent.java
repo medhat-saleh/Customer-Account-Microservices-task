@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 public class AccountCreationEvent {
     private Long customerId;
     private CustomerType customerType;
-    private String accountType; // SAVING, SALARY, INVESTMENT
+    private String type; // SAVING, SALARY, INVESTMENT
     private BigDecimal initialBalance;
     private String requestId; // For tracking the request
     private Long timestamp;

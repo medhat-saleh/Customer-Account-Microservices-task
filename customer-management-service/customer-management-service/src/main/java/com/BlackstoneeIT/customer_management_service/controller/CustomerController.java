@@ -9,67 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
-
 import java.math.BigDecimal;
 import java.util.UUID;
-//
-//@RestController
-//@RequestMapping("/api/v1/customer")
-//
-//public class CustomerController {
-//    @Autowired
-//private CustomerServices customerServices;
-//@Autowired
-//private KafkaTemplate<String, String> kafkaTemplate;
-//@Autowired
-//private  AccountStatusService accountStatusService;
-//
-//
-//    @PostMapping
-//    public ResponseEntity<CustomerResponse> create(@Valid @RequestBody CreateCustomer CreateCustomer) {
-//        CustomerResponse resp = customerServices.createCustomer(CreateCustomer);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(resp);
-//    }
-//    @GetMapping("/requests/{requestId}/status")
-//    public ResponseEntity<AccountStatusDto> getRequestStatus(@PathVariable String requestId) {
-//
-//        AccountStatusDto status = accountStatusService.getRequestStatus(requestId);
-//        return ResponseEntity.ok(status);
-//    }
-//
-//    @GetMapping("/{id}")
-//    public ResponseEntity<CustomerResponse> getCustomer(@PathVariable long id){
-//    CustomerResponse resp = customerServices.getCustomerById(id);
-//    return new ResponseEntity<CustomerResponse>(resp, HttpStatus.OK);
-//}
-//@GetMapping("/test")
-//public void test(){
-//
-//    kafkaTemplate.send("test_topic", "test");
-//
-//    //publish
-//    //listen
-//}
-//    @GetMapping("/{customerId}/accounts")
-//    public ResponseEntity<String> createAccount(
-//            @PathVariable Long customerId,
-//            @RequestParam String accountType,
-//            @RequestParam(required = false, defaultValue = "0.00") BigDecimal initialBalance) {
-//       String requestId= UUID.randomUUID().toString();
-//        customerServices.requestAccountCreation(customerId, accountType, initialBalance,requestId);
-//        return ResponseEntity.accepted().body("Account creation request sent successfully your request id = "+requestId);
-//    }
-//
-//}
-
-
-
 import com.BlackstoneeIT.customer_management_service.dto.AccountCreationResponse;
 import com.BlackstoneeIT.customer_management_service.dto.AccountStatusDto;
 import com.BlackstoneeIT.customer_management_service.dto.CreateCustomer;
 import com.BlackstoneeIT.customer_management_service.dto.CustomerResponse;
-import com.BlackstoneeIT.customer_management_service.services.AccountStatusService;
-import com.BlackstoneeIT.customer_management_service.services.CustomerServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -77,16 +22,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
-
-import java.math.BigDecimal;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/customers")

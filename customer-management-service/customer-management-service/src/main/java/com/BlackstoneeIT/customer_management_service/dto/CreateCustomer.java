@@ -2,7 +2,9 @@ package com.BlackstoneeIT.customer_management_service.dto;
 
 import com.BlackstoneeIT.customer_management_service.enums.CustomerType;
 import jakarta.validation.constraints.*;
+import lombok.Builder;
 
+@Builder
 public record CreateCustomer(
                               @NotBlank(message = "Legal ID is required")
                               @Size(min = 5, max = 20, message = "Legal ID must be between 5-20 characters")

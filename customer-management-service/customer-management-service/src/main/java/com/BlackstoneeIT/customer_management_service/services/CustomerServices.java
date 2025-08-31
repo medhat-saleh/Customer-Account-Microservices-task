@@ -25,7 +25,7 @@ public CustomerResponse getCustomerById(long customerId) {
     Customer customer = (Customer) customerRepository.getCustomersById(customerId);
 
     return new CustomerResponse(
-            customer.getId().toString(),
+            customer.getId(),
             customer.getLegalID(),
             customer.getFirstName(),
             customer.getLastName(),
@@ -52,7 +52,7 @@ public CustomerResponse createCustomer(CreateCustomer createCustomer) {
         Customer createdCustomer = customerRepository.save(customer);
 
         return new CustomerResponse(
-                createdCustomer.getId().toString(),
+                createdCustomer.getId(),
                 createdCustomer.getLegalID(),
                 createdCustomer.getFirstName(),
                 createdCustomer.getLastName(),
