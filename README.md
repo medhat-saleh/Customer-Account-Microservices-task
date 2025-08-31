@@ -1,6 +1,5 @@
 # Customer-Account-Microservices-task
-microservices for customer management and account management 
-# Banking Microservices with Kafka
+
 
 ## Overview
 
