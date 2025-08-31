@@ -7,8 +7,8 @@ A Spring Boot microservices application that demonstrates banking customer and a
 
 ## Architecture
 
-- **Customer Service**: Manages bank customer information
-- **Account Service**: Handles customer bank accounts  
+- **customer-management-service**: Manages bank customer information
+- **Aaccount-management-service**: Handles customer bank accounts  
 - **Apache Kafka**: Message broker for event-driven communication
 - **PostgreSQL**: Relational database for data persistence
 
@@ -24,5 +24,6 @@ A Spring Boot microservices application that demonstrates banking customer and a
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/medhat-saleh/Customer-Account-Microservices-task.git
+
 cd Customer-Account-Microservices-task
