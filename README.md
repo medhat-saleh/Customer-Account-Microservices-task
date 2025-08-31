@@ -39,7 +39,7 @@ mvn spring-boot:run -pl customer-management-service
 
 # Terminal 2 - Account-management-service 
 mvn spring-boot:run -pl customer-management-service 
-
+```
 
 ### 2️⃣ Start Kafka
 Make sure Kafka is running on **localhost:9092**.  
