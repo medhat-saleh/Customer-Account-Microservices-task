@@ -47,7 +47,6 @@ Make sure Kafka is running on **localhost:9092**.
 docker run -p 9092:9092 -d apache/kafka:latest
 ```
 
-Or use `docker-compose.yml` (recommended).
 
 ### 3️⃣ Build the Project
 ```bash
@@ -75,10 +74,7 @@ mvn spring-boot:run -pl Account-management-service
 - RESTful APIs (OpenAPI/Swagger)  
 - Event-driven communication via **Kafka**  
 - Data validation & business rules enforcement  
-- Unit & integration tests with **JaCoCo coverage**  
-- **Spring Security** (Basic Auth)  
-- Spring Profiles (`dev`, `test`, `prod`)  
-
+- Unit tests 
 ---
 
 ## 📂 API Endpoints
@@ -111,7 +107,7 @@ mvn spring-boot:run -pl Account-management-service
 ---
 
 ## 🧪 Testing
-Run tests with coverage report:  
+Run tests 
 
 ```bash
 mvn test
@@ -122,32 +118,15 @@ mvn jacoco:report
 
 ## ⚙️ Configuration
 
-### Profiles
-- `dev` → H2 (default)  
-- `prod` → PostgreSQL  
-- `test` → Testing  
 
-### Kafka (application.yml)
-```yaml
-spring:
-  kafka:
-    bootstrap-servers: localhost:9092
 
 ---
 
-## 🐳 Docker Support
-Start all services with Docker Compose:  
-
-```bash
-docker-compose up -d
-```
-
 This spins up:
-- Kafka  
-- Zookeeper  
+- Kafka    
 - Customer Service  
 - Account Service  
-- PostgreSQL (if configured)  
+- PostgreSQL 
 
 ---
 
@@ -155,38 +134,4 @@ This spins up:
 1. **Customer Created** → `CustomerCreatedEvent` published to Kafka  
 2. **Account Service consumes** event → creates account reference  
 3. Account operations → relevant events published  
-4. Both services stay in sync via **event-driven updates**  
 
----
-
-## 🧰 Postman Setup
-1. Open Postman  
-2. Import collection from: `postman/banking-microservices.postman_collection.json`  
-3. Use environments:  
-   - Customer Service → `http://localhost:8081`  
-   - Account Service → `http://localhost:8082`  
-4. Run sample requests (Create Customer, Create Account, etc.)  
-
----
-
-## 🚀 Steps to Push to GitHub
-1. Stage files  
-```bash
-git add .
-```
-
-2. Commit changes  
-```bash
-git commit -m "Initial commit - Banking Microservices with Kafka"
-```
-
-3. Push to GitHub  
-```bash
-git branch -M main
-git push -u origin main
-```
-
----
-
-## 📜 License
-This project is licensed under the MIT License.
