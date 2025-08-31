@@ -27,3 +27,19 @@ A Spring Boot microservices application that demonstrates banking customer and a
 git clone https://github.com/medhat-saleh/Customer-Account-Microservices-task.git
 
 cd Customer-Account-Microservices-task
+### 2 Start Kafka
+Ensure you have Kafka running on localhost:9092
+# If using Docker (example)
+docker run -p 9092:9092 -d apache/kafka:latest
+### 3. Build the Project
+mvn clean install
+###4. Run the Services
+# Terminal 1 - Customer Service
+mvn spring-boot:run -pl customer-management-service
+
+# Terminal 2 - Account-management-service 
+mvn spring-boot:run -pl account-service
+
+2️⃣ Start Kafka
+
+Make sure Kafka is running on localhost:9092.
