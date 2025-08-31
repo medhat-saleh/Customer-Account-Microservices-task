@@ -1,0 +1,80 @@
+{
+  "info": {
+    "name": "Customer Management Service API",
+    "_postman_id": "c1a91f0a-8e44-4c6b-9d02-3d4123a51f89",
+    "description": "API for managing customers and their bank accounts with Kafka integration",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"legalID\": \"L123456789\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phoneNumber\": \"+1234567890\",\n  \"address\": \"123 Main St, City\",\n  \"customerType\": \"RETAIL\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/customers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "customers"]
+        }
+      }
+    },
+    {
+      "name": "Create Account for Customer",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8081/api/v1/customers/1000001/accounts?accountType=SAVING&initialBalance=1000",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "customers", "1000001", "accounts"],
+          "query": [
+            { "key": "accountType", "value": "SAVING" },
+            { "key": "initialBalance", "value": "1000" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Customer by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/v1/customers/1000001",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "customers", "1000001"]
+        }
+      }
+    },
+    {
+      "name": "Get Account Creation Status",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/v1/customers/requests/a1b2c3d4-e5f6-7890-abcd-ef1234567890/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "customers", "requests", "a1b2c3d4-e5f6-7890-abcd-ef1234567890", "status"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8081"
+    }
+  ]
+}
+

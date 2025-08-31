@@ -1,4 +1,4 @@
 package com.BlackstoneeIT.account_management_service.enums;
 
-public enum AccountType {
-}
+
+public enum AccountType { SAVING, SALARY, INVESTMENT }

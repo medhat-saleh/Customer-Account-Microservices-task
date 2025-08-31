@@ -1,0 +1,107 @@
+{
+  "info": {
+    "name": "Account Management API",
+    "_postman_id": "b1234567-abcd-efgh-ijkl-987654321000",
+    "description": "Collection generated from OpenAPI definition for managing customer bank accounts",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Accounts",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8082/api/v1/accounts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8082",
+          "path": ["api", "v1", "accounts"]
+        }
+      }
+    },
+    {
+      "name": "Get Account by ID & Customer ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8082/api/v1/accounts/{{accountId}}/customer/{{customerId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8082",
+          "path": ["api", "v1", "accounts", "{{accountId}}", "customer", "{{customerId}}"]
+        }
+      }
+    },
+    {
+      "name": "Update Account Balance",
+      "request": {
+        "method": "PATCH",
+        "url": {
+          "raw": "http://localhost:8082/api/v1/accounts/{{accountId}}/customer/{{customerId}}/balance?newBalance={{newBalance}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8082",
+          "path": ["api", "v1", "accounts", "{{accountId}}", "customer", "{{customerId}}", "balance"],
+          "query": [
+            {
+              "key": "newBalance",
+              "value": "{{newBalance}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Account",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8082/api/v1/accounts/{{accountId}}/customer/{{customerId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8082",
+          "path": ["api", "v1", "accounts", "{{accountId}}", "customer", "{{customerId}}"]
+        }
+      }
+    },
+    {
+      "name": "Get Accounts by Customer ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8082/api/v1/accounts/customer/{{customerId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8082",
+          "path": ["api", "v1", "accounts", "customer", "{{customerId}}"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "accountId",
+      "value": "5000001"
+    },
+    {
+      "key": "customerId",
+      "value": "1000001"
+    },
+    {
+      "key": "newBalance",
+      "value": "1500.75"
+    },
+    {
+      "key": "token",
+      "value": "YOUR_JWT_TOKEN_HERE"
+    }
+  ]
+}
+
