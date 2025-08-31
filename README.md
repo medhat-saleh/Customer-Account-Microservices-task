@@ -36,15 +36,8 @@ git remote https://github.com/medhat-saleh/Customer-Account-Microservices-task.g
 If you already cloned:
 ```bash
 git clone https://github.com/medhat-saleh/Customer-Account-Microservices-task.git
-cd banking-microservices
-```
-## Quick Start
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/medhat-saleh/Customer-Account-Microservices-task.git
-
 cd Customer-Account-Microservices-task
+```
 
 ### 2️⃣ Start Kafka
 Make sure Kafka is running on **localhost:9092**.  
