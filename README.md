@@ -111,22 +111,7 @@ Run tests
 
 ```bash
 mvn test
-mvn jacoco:report
 ```
-
----
-
-## ⚙️ Configuration
-
-
-
----
-
-This spins up:
-- Kafka    
-- Customer Service  
-- Account Service  
-- PostgreSQL 
 
 ---
 
