@@ -11,15 +11,33 @@ A Spring Boot microservices application that demonstrates banking customer and a
 - **Aaccount-management-service**: Handles customer bank accounts  
 - **Apache Kafka**: Message broker for event-driven communication
 - **PostgreSQL**: Relational database for data persistence
+---
 
-## Prerequisites
+## ✅ Prerequisites
+- Java 17+  
+- Maven 3.6+  
+- Docker  
+- Apache Kafka (`localhost:9092`)  
+- PostgreSQL (optional, H2 is default)  
+- Postman (optional, for API testing)  
+- GitHub account  
 
-- Java 17+
-- Maven 3.6+
-- Docker
-- Apache Kafka (running on localhost:9092)
-- PostgreSQL (optional, H2 used by default)
+---
 
+## 🚀 Quick Start
+
+### 1️⃣ Clone or Initialize Repository
+If you are starting fresh:
+```bash
+git init
+git remote https://github.com/medhat-saleh/Customer-Account-Microservices-task.git
+```
+
+If you already cloned:
+```bash
+git clone https://github.com/medhat-saleh/Customer-Account-Microservices-task.git
+cd banking-microservices
+```
 ## Quick Start
 
 ### 1. Clone the Repository
@@ -27,19 +45,6 @@ A Spring Boot microservices application that demonstrates banking customer and a
 git clone https://github.com/medhat-saleh/Customer-Account-Microservices-task.git
 
 cd Customer-Account-Microservices-task
-### 2 Start Kafka
-Ensure you have Kafka running on localhost:9092
-# If using Docker (example)
-docker run -p 9092:9092 -d apache/kafka:latest
-### 3. Build the Project
-mvn clean install
-###4. Run the Services
-# Terminal 1 - Customer Service
-mvn spring-boot:run -pl customer-management-service
-
-# Terminal 2 - Account-management-service 
-mvn spring-boot:run -pl customer-management-service 
-```
 
 ### 2️⃣ Start Kafka
 Make sure Kafka is running on **localhost:9092**.  
@@ -59,10 +64,10 @@ mvn clean install
 ### 4️⃣ Run the Services
 ```bash
 # Terminal 1 - Customer Service
-mvn spring-boot:run -pl customer-service
+mvn spring-boot:run -pl customer-management-service
 
 # Terminal 2 - Account Service
-mvn spring-boot:run -pl account-service
+mvn spring-boot:run -pl Account-management-service 
 ```
 
 ---
